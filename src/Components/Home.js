@@ -108,10 +108,10 @@ function Home() {
   }, [query, rawServices]);
 
   return (
-    <div className="p-6 md:p-10 min-h-screen">
+    <div className="p-4 md:p-10 min-h-screen max-w-[100vw] overflow-x-hidden">
       {/* Blinking Heading */}
       <h1
-        className="text-4xl md:text-5xl font-extrabold text-center mb-8 animate-blink"
+        className="text-3xl md:text-5xl font-extrabold text-center mb-6 md:mb-8 animate-blink"
         style={{
           animation: 'colorChange 10s ease-in-out infinite',
           color: 'black',
@@ -121,32 +121,32 @@ function Home() {
       </h1>
 
       {/* Company Profile */}
-      <div className="max-w-4xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-lg mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800 border-b-4 border-blue-400 pb-2">
+      <div className="max-w-4xl mx-auto bg-white p-4 md:p-8 rounded-lg shadow-lg mb-8 md:mb-12">
+        <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-gray-800 border-b-4 border-blue-400 pb-2">
           Company Profile
         </h2>
-        <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-700">About Us</h3>
-        <p className="mb-4 text-gray-600 leading-relaxed text-base md:text-lg">
+        <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4 text-gray-700">About Us</h3>
+        <p className="mb-3 md:mb-4 text-gray-600 leading-relaxed text-sm md:text-lg">
           ELECTROMATRIX ART DECO LTD. is a gateway to providing effective and dynamic services tailored for the
           entertainment industry, especially the film sector. Our expertise includes production design and art, advert
           setups, wedding and corporate events, wallpaper installation, interior decoration, and electrical services.
         </p>
-        <p className="mb-4 text-gray-600 leading-relaxed text-base md:text-lg">
+        <p className="mb-3 md:mb-4 text-gray-600 leading-relaxed text-sm md:text-lg">
           As a company rooted in art, our services are driven by skill and talent, ensuring creativity and quality in
           everything we do. We continuously adapt to the evolving market to serve our clients better.
         </p>
-        <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+        <p className="text-gray-600 leading-relaxed text-sm md:text-lg">
           Join us to bring your ideas to life with professional and artistic solutions.
         </p>
       </div>
 
       {/* Management with animated border around it */}
-      <div className="max-w-4xl mx-auto mb-12 px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-800 border-b-4 border-blue-400 pb-2">
+      <div className="max-w-4xl mx-auto mb-8 md:mb-12 px-2 md:px-4">
+        <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-center text-gray-800 border-b-4 border-blue-400 pb-2">
           Management
         </h2>
         {/* Surround with animated border - increased border thickness to border-12 */}
-        <div className="border-12 rounded-lg p-1 animate-borderColor">
+        <div className="border-8 md:border-12 rounded-lg p-1 animate-borderColor">
           <div className="overflow-hidden rounded-lg shadow-lg hover:scale-105 transform transition-transform duration-300 border-4 border-transparent">
             {/* animated border with color cycles */}
             <div className="border-4 rounded-lg p-2 bg-white">
@@ -160,32 +160,18 @@ function Home() {
         </div>
       </div>
 
-      {/* Add some custom CSS for animated border color */}
-      <style jsx>{`
-        @keyframes borderColorCycle {
-          0% { border-color: #3b82f6; }
-          25% { border-color: #ef4444; }
-          50% { border-color: #10b981; }
-          75% { border-color: #8b5cf6; }
-          100% { border-color: #3b82f6; }
-        }
-        .animate-borderColor {
-          animation: borderColorCycle 4s linear infinite;
-        }
-      `}</style>
-
       {/* Creative Inspirations */}
-      <div className="max-w-7xl mx-auto px-4 mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-gray-800">Our Creative Inspirations</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto px-2 md:px-4 mb-8 md:mb-12">
+        <h2 className="text-2xl md:text-4xl font-bold mb-6 md:mb-8 text-center text-gray-800">Our Creative Inspirations</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {items.map((item, index) => (
             <div
               key={index}
               className="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out"
             >
-              <img src={item.image} alt={item.title} className="w-full h-48 md:h-64 object-cover" />
-              <div className="p-4 text-center">
-                <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-2 transition-transform hover:translate-y-1 duration-200">
+              <img src={item.image} alt={item.title} className="w-full h-40 md:h-64 object-cover" />
+              <div className="p-3 md:p-4 text-center">
+                <h3 className="text-lg md:text-2xl font-semibold text-gray-800 mb-1 md:mb-2 transition-transform hover:translate-y-1 duration-200">
                   {item.title}
                 </h3>
               </div>
@@ -194,44 +180,44 @@ function Home() {
         </div>
       </div>
 
-      {/* ——— NEW SECTION: What’s Unique About Us (Blinking Card) ——— */}
-      <section className="max-w-7xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-lg mb-16">
+      {/* ——— NEW SECTION: What's Unique About Us (Blinking Card) ——— */}
+      <section className="max-w-7xl mx-auto bg-white p-4 md:p-8 rounded-lg shadow-lg mb-12 md:mb-16">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-6">What’s Unique About Us</h2>
+          <h2 className="text-2xl md:text-4xl font-extrabold text-gray-800 mb-4 md:mb-6">What's Unique About Us</h2>
         </div>
         <div
-          className="p-6 md:p-8 bg-blue-50 text-gray-700 border-2 border-blue-300 rounded-xl shadow-md animate-blink"
+          className="p-4 md:p-8 bg-blue-50 text-gray-700 border-2 border-blue-300 rounded-xl shadow-md animate-blink"
           style={{
             animation: 'blinkBackground 15s infinite',
           }}
         >
-          <p className="mb-4">
+          <p className="mb-3 md:mb-4 text-sm md:text-base">
             The Company is managed by highly well trained, experienced, dedicated, focused, committed, motivated, dynamic, self‐driven and innovative professional team with an sense of entrepreneurship background and skills with an in‐depth understanding of community surrounding socio-economic prevailing conditions.
           </p>
-          <p className="mb-4">
-            We provide competent and innovative workforce solutions to clients to meet the challenges of today’s dynamic business and working environment.
+          <p className="mb-3 md:mb-4 text-sm md:text-base">
+            We provide competent and innovative workforce solutions to clients to meet the challenges of today's dynamic business and working environment.
           </p>
-          <p className="mb-4">
+          <p className="mb-3 md:mb-4 text-sm md:text-base">
             Our key deliverables are efficient and effective output results measured on competency and teamwork.
           </p>
-          <p className="mb-4">
+          <p className="mb-3 md:mb-4 text-sm md:text-base">
             We have the right mix of resources to help clients maximize the efficiency and productivity of their workforce through our wide range of services.
           </p>
-          <p>
+          <p className="text-sm md:text-base">
             We always maintain excellent rapport with our clients and are flexible to accommodate busy schedules and short-time notices in meeting their varying needs.
           </p>
         </div>
       </section>
 
       {/* ——— OUR SERVICES SECTION ——— */}
-      <section className="max-w-7xl mx-auto bg-white/60 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-xl mb-16">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+      <section className="max-w-7xl mx-auto bg-white/60 backdrop-blur-sm p-4 md:p-8 rounded-2xl shadow-xl mb-12 md:mb-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 md:gap-4 mb-4 md:mb-6">
           <div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">Services Offered</h2>
-            <p className="text-gray-600 mt-1">To our esteemed customers</p>
+            <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900">Services Offered</h2>
+            <p className="text-gray-600 mt-1 text-sm md:text-base">To our esteemed customers</p>
           </div>
           {/* Quick search */}
-          <div className="w-full md:w-96">
+          <div className="w-full md:w-96 mt-3 md:mt-0">
             <label htmlFor="service-search" className="sr-only">
               Search services
             </label>
@@ -242,24 +228,24 @@ function Home() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search e.g. 'electrical', 'weddings', 'cctv'…"
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-gray-800"
+                className="w-full px-4 py-2 md:py-3 rounded-xl border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-gray-800 text-sm md:text-base"
               />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">⌘K</span>
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm md:text-base">⌘K</span>
             </div>
           </div>
         </div>
         {/* Service cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-5">
           {filteredServices.map((label, idx) => (
             <article
               key={`${label}-${idx}`}
               className="group relative overflow-hidden rounded-xl border border-gray-100 bg-white shadow hover:shadow-lg transition-shadow"
             >
-              <div className="p-5 flex items-start gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gray-50 ring-1 ring-gray-200 group-hover:bg-gray-100 transition-colors">
-                  <span className="text-xl">{iconFor(label)}</span>
+              <div className="p-4 md:p-5 flex items-start gap-3 md:gap-4">
+                <div className="flex h-9 w-9 md:h-11 md:w-11 items-center justify-center rounded-lg bg-gray-50 ring-1 ring-gray-200 group-hover:bg-gray-100 transition-colors">
+                  <span className="text-lg md:text-xl">{iconFor(label)}</span>
                 </div>
-                <h3 className="font-semibold text-gray-800 text-base leading-snug">{label}</h3>
+                <h3 className="font-semibold text-gray-800 text-sm md:text-base leading-snug">{label}</h3>
               </div>
               <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-blue-500 via-emerald-500 to-fuchsia-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </article>
@@ -267,18 +253,18 @@ function Home() {
         </div>
         {/* No services match */}
         {filteredServices.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-gray-500">No services match “{query}”. Try a different keyword.</p>
+          <div className="text-center py-8 md:py-12">
+            <p className="text-gray-500 text-sm md:text-base">No services match "{query}". Try a different keyword.</p>
           </div>
         )}
         {/* Helper chips */}
-        <div className="mt-6 flex flex-wrap gap-2">
+        <div className="mt-4 md:mt-6 flex flex-wrap gap-2">
           {['Weddings', 'Electrical', 'Lighting', 'CCTV', 'Wallpaper', 'Events', 'Design'].map((hint) => (
             <button
               key={hint}
               type="button"
               onClick={() => setQuery(hint.toLowerCase())}
-              className="px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm hover:bg-blue-100 transition"
+              className="px-2 py-1 md:px-3 md:py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs md:text-sm hover:bg-blue-100 transition"
             >
               #{hint}
             </button>
@@ -286,7 +272,7 @@ function Home() {
           <button
             type="button"
             onClick={() => setQuery('')}
-            className="px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm hover:bg-gray-200 transition"
+            className="px-2 py-1 md:px-3 md:py-1.5 rounded-full bg-gray-100 text-gray-700 text-xs md:text-sm hover:bg-gray-200 transition"
           >
             Clear
           </button>
@@ -294,9 +280,9 @@ function Home() {
       </section>
 
       {/* Our Business & Future */}
-      <section className="max-w-7xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-lg mb-16">
+      <section className="max-w-7xl mx-auto bg-white p-4 md:p-8 rounded-lg shadow-lg mb-12 md:mb-16">
         <h2
-          className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-8 text-center animate-blink"
+          className="text-2xl md:text-4xl font-extrabold text-gray-800 mb-6 md:mb-8 text-center animate-blink"
           style={{
             animation: 'colorChange 10s ease-in-out infinite',
           }}
@@ -304,53 +290,53 @@ function Home() {
           Our Craft is Our Business, Fixing The Future
         </h2>
         {/* Images grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {[Working1, Working2, Working3, Working4, Working5, Working6, Working7, Working8, Working9, Working10, Working11, Working12].map((image, index) => (
             <div key={index} className="group relative overflow-hidden rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
-              <img src={image} alt={`Working image ${index + 1}`} className="w-full h-48 md:h-64 object-cover" />
+              <img src={image} alt={`Working image ${index + 1}`} className="w-full h-40 md:h-64 object-cover" />
             </div>
           ))}
         </div>
       </section>
 
       {/* Development Keys */}
-      <section className="max-w-7xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-lg mb-16">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-8 text-center">
+      <section className="max-w-7xl mx-auto bg-white p-4 md:p-8 rounded-lg shadow-lg mb-12 md:mb-16">
+        <h2 className="text-2xl md:text-4xl font-extrabold text-gray-800 mb-6 md:mb-8 text-center">
           Our Keys for Development
         </h2>
         {/* Keys in cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {/* Example cards */}
-          <div className="bg-blue-500 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-            <h3 className="text-2xl font-semibold text-white mb-4">Desire for Excellence</h3>
-            <p className="text-white">
+          <div className="bg-blue-500 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 md:mb-4">Desire for Excellence</h3>
+            <p className="text-white text-sm md:text-base">
               We constantly strive for excellence in everything we do, ensuring high-quality work and
               unparalleled service.
             </p>
           </div>
-          <div className="bg-blue-500 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-            <h3 className="text-2xl font-semibold text-white mb-4">Trust and Confidence Build-Up</h3>
-            <p className="text-white">
+          <div className="bg-blue-500 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 md:mb-4">Trust and Confidence Build-Up</h3>
+            <p className="text-white text-sm md:text-base">
               Building strong, trusting relationships with clients and partners is at the heart of our
               business.
             </p>
           </div>
-          <div className="bg-blue-500 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-            <h3 className="text-2xl font-semibold text-white mb-4">Transparency</h3>
-            <p className="text-white">
+          <div className="bg-blue-500 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 md:mb-4">Transparency</h3>
+            <p className="text-white text-sm md:text-base">
               We maintain transparency in all our dealings, ensuring openness, honesty, and clear communication.
             </p>
           </div>
-          <div className="bg-blue-500 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-            <h3 className="text-2xl font-semibold text-white mb-4">Teamwork</h3>
-            <p className="text-white">
+          <div className="bg-blue-500 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 md:mb-4">Teamwork</h3>
+            <p className="text-white text-sm md:text-base">
               Our team collaborates effectively to achieve shared goals, recognizing the importance of collective effort.
             </p>
           </div>
         </div>
         {/* MOTTO with blinking */}
-        <div className="text-center mt-8">
-          <h3 className="text-2xl font-semibold text-white mb-4 animate-blink" style={{ animation: 'colorChange 10s ease-in-out infinite' }}>
+        <div className="text-center mt-6 md:mt-8">
+          <h3 className="text-lg md:text-2xl font-semibold text-gray-800 mb-3 md:mb-4 animate-blink" style={{ animation: 'colorChange 10s ease-in-out infinite' }}>
             MOTTO: A COMPANY IS MEASURED WITH THE COURTESY IT TREATS ITS CLIENTS.
           </h3>
         </div>
@@ -361,11 +347,10 @@ function Home() {
         href="https://wa.me/254714287705"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-10 right-6 bg-green-500 text-white p-6 rounded-full shadow-xl hover:bg-green-400 transition-all transform hover:scale-110"
-        style={{ zIndex: 1000 }}
+        className="fixed bottom-6 right-4 md:bottom-10 md:right-6 bg-green-500 text-white p-4 md:p-6 rounded-full shadow-xl hover:bg-green-400 transition-all transform hover:scale-110 z-50"
         aria-label="Chat with us on WhatsApp"
       >
-        <FaWhatsapp className="text-4xl" />
+        <FaWhatsapp className="text-2xl md:text-4xl" />
       </a>
 
       {/* Custom styles */}

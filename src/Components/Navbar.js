@@ -5,7 +5,10 @@ import Logo from '../Assests/logo.png'; // Ensure the path is correct
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <nav className="bg-blue-600 p-6 flex items-center justify-between relative z-50">
@@ -25,7 +28,11 @@ function Navbar() {
           className="text-white focus:outline-none p-2"
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         >
-          {isMenuOpen ? <XIcon className="w-8 h-8" /> : <MenuIcon className="w-8 h-8" />}
+          {isMenuOpen ? (
+            <XIcon className="w-8 h-8 font-bold text-black" /> // Close icon
+          ) : (
+            <MenuIcon className="w-8 h-8 text-white" /> // Hamburger icon
+          )}
         </button>
       </div>
 
@@ -59,7 +66,7 @@ function Navbar() {
 
       {/* Small screen menu: overlay styled card */}
       {isMenuOpen && (
-        <div className="absolute top-full right-4 left-4 mt-4 bg-white rounded-lg shadow-2xl p-6 z-40 flex flex-col space-y-4 transition-transform duration-300 ease-in-out origin-top md:hidden">
+        <div className="absolute top-0 right-0 left-0 mt-6 bg-gray-400 rounded-lg shadow-2xl p-6 z-40 flex flex-col space-y-4 transition-transform duration-300 ease-in-out origin-top md:hidden">
           {/* Home */}
           <Link
             to="/"
@@ -94,3 +101,7 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
+
+
