@@ -12,12 +12,12 @@ function Navbar() {
 
   return (
     <nav className="bg-blue-600 p-6 flex items-center justify-between relative z-50">
-      {/* Logo on the far left, larger oval shape */}
+      {/* Logo on the far left, responsive to small screens */}
       <div className="flex-shrink-0">
         <img
           src={Logo}
           alt="Logo"
-          className="w-41 h-25 object-cover cursor-pointer transition-transform hover:scale-105 rounded-full"
+          className="w-72 h-28 sm:w-64 sm:h-20 md:w-72 md:h-28 object-cover cursor-pointer transition-transform hover:scale-105 rounded-full"
         />
       </div>
 
@@ -29,7 +29,7 @@ function Navbar() {
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         >
           {isMenuOpen ? (
-            <XIcon className="w-8 h-8 font-bold text-black" /> // Close icon
+            <XIcon className="w-8 h-8 text-white" /> // Close icon
           ) : (
             <MenuIcon className="w-8 h-8 text-white" /> // Hamburger icon
           )}
@@ -101,6 +101,7 @@ function Navbar() {
 }
 
 export default Navbar;
+
 
 
 
