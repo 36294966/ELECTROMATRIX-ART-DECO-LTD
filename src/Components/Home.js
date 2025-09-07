@@ -287,7 +287,7 @@ function Home() {
             animation: 'colorChange 10s ease-in-out infinite',
           }}
         >
-          Our Craft is Our Business, Fixing The Future
+          Our Craft is Our Business, And We Are Fixing The Future
         </h2>
         {/* Images grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">

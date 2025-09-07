@@ -3,10 +3,10 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa'
 
 function Contact() {
   return (
-    <div className="p-8 bg-pink-200 min-h-screen flex justify-center items-start">
+    <div className="p-4 sm:p-8 bg-pink-200 min-h-screen flex justify-center items-start">
       {/* Larger, user-friendly contact card */}
-      <div className="w-full max-w-2xl bg-blue-600 text-white rounded-xl shadow-2xl p-8 space-y-6 transition-transform transform hover:scale-105 hover:shadow-3xl">
-        <h2 className="text-4xl font-bold mb-6 text-center">Contact Information</h2>
+      <div className="w-full max-w-2xl bg-blue-600 text-white rounded-xl shadow-2xl p-6 sm:p-8 space-y-6 transition-transform transform hover:scale-105 hover:shadow-3xl">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-center">Contact Information</h2>
         {/* Contact Details List */}
         <div className="space-y-8">
           
@@ -14,8 +14,8 @@ function Contact() {
           <div className="flex items-center space-x-4 p-4 bg-blue-500 rounded-lg hover:bg-blue-400 transition duration-300 cursor-pointer">
             <FaPhone className="w-8 h-8" />
             <div>
-              <p className="text-xl font-semibold">Phone:</p>
-              <p className="text-lg ml-1">0714287705</p>
+              <p className="text-lg sm:text-xl font-semibold">Phone:</p>
+              <p className="text-sm sm:text-lg ml-1">0714287705</p>
             </div>
           </div>
           
@@ -23,8 +23,8 @@ function Contact() {
           <div className="flex items-center space-x-4 p-4 bg-blue-500 rounded-lg hover:bg-blue-400 transition duration-300 cursor-pointer">
             <FaEnvelope className="w-8 h-8" />
             <div>
-              <p className="text-xl font-semibold">Email:</p>
-              <p className="text-lg ml-1">erastusngamau90@gmail.com</p>
+              <p className="text-lg sm:text-xl font-semibold">Email:</p>
+              <p className="text-sm sm:text-lg ml-1">symomwaniqs@gmail.com</p>
             </div>
           </div>
           
@@ -32,8 +32,8 @@ function Contact() {
           <div className="flex items-center space-x-4 p-4 bg-blue-500 rounded-lg hover:bg-blue-400 transition duration-300 cursor-pointer">
             <FaMapMarkerAlt className="w-8 h-8" />
             <div>
-              <p className="text-xl font-semibold">Location:</p>
-              <p className="text-lg ml-1">Nairobi</p>
+              <p className="text-lg sm:text-xl font-semibold">Location:</p>
+              <p className="text-sm sm:text-lg ml-1">Nairobi</p>
             </div>
           </div>
           
@@ -46,8 +46,8 @@ function Contact() {
           >
             <FaWhatsapp className="w-8 h-8" />
             <div>
-              <p className="text-xl font-semibold">WhatsApp:</p>
-              <p className="text-lg ml-1">0714287705</p>
+              <p className="text-lg sm:text-xl font-semibold">WhatsApp:</p>
+              <p className="text-sm sm:text-lg ml-1">0714287705</p>
             </div>
           </a>
         </div>

@@ -17,7 +17,7 @@ function Navbar() {
         <img
           src={Logo}
           alt="Logo"
-          className="w-72 h-28 sm:w-64 sm:h-20 md:w-72 md:h-28 object-cover cursor-pointer transition-transform hover:scale-105 rounded-full"
+          className="w-72 h-28 sm:w-56 sm:h-20 md:w-72 md:h-28 object-cover cursor-pointer transition-transform hover:scale-105 rounded-full"
         />
       </div>
 
