@@ -3,9 +3,9 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa'
 
 function Contact() {
   return (
-    <div className="p-4 sm:p-8 bg-pink-200 min-h-screen flex justify-center items-start">
-      {/* Larger, user-friendly contact card */}
-      <div className="w-full max-w-2xl bg-blue-600 text-white rounded-xl shadow-2xl p-6 sm:p-8 space-y-6 transition-transform transform hover:scale-105 hover:shadow-3xl">
+    <div className="min-h-screen flex flex-col justify-between bg-pink-200">
+      {/* Contact card */}
+      <div className="w-full max-w-2xl bg-blue-600 text-white rounded-xl shadow-2xl p-6 sm:p-8 space-y-6 mx-auto my-8 transition-transform transform hover:scale-105 hover:shadow-3xl">
         <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-center">Contact Information</h2>
         {/* Contact Details List */}
         <div className="space-y-8">
@@ -52,8 +52,14 @@ function Contact() {
           </a>
         </div>
       </div>
+
+      {/* Footer section */}
+      <footer className="bg-blue-600 text-white py-4 text-center">
+        <p>&copy; 2025 Your Company Name</p>
+      </footer>
     </div>
   );
 }
 
 export default Contact;
+
