@@ -108,7 +108,7 @@ function Home() {
   }, [query, rawServices]);
 
   return (
-    <div className="p-4 md:p-10 min-h-screen max-w-[100vw] overflow-x-hidden">
+    <div className="p-4 md:p-10 min-h-screen w-full overflow-x-hidden">
       {/* Blinking Heading */}
       <h1
         className="text-3xl md:text-5xl font-extrabold text-center mb-6 md:mb-8 animate-blink"
