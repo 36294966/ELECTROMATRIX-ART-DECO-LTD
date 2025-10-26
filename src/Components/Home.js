@@ -1,4 +1,3 @@
-// Home.js
 import React, { useMemo, useState } from 'react';
 import Deco1 from '../Assests/deco1.png';
 import Deco2 from '../Assests/deco2.png';
@@ -6,12 +5,7 @@ import Deco3 from '../Assests/deco3.png';
 import Deco4 from '../Assests/deco4.png';
 import Deco5 from '../Assests/deco5.png';
 import Deco6 from '../Assests/deco6.png';
-import Deco7 from '../Assests/deco7.png';
-import Deco8 from '../Assests/deco8.jpg';
-import Deco9 from '../Assests/deco9.jpg';
-import Deco10 from '../Assests/deco10.jpg';
-import Deco11 from '../Assests/deco11.jpg';
-import Deco12 from '../Assests/deco12.jpg';
+import Management from '../Assests/management.jpg';
 
 import Working1 from '../Assests/working1.jpg';
 import Working2 from '../Assests/working2.jpg';
@@ -25,8 +19,6 @@ import Working9 from '../Assests/working9.jpg';
 import Working10 from '../Assests/working10.jpg';
 import Working11 from '../Assests/working11.jpg';
 import Working12 from '../Assests/working12.png';
-
-import Management from '../Assests/management.jpg';
 
 import {
   FaWhatsapp,
@@ -52,37 +44,6 @@ function Home() {
     { title: 'Innovation', image: Deco6 },
   ];
 
-  const rawServices = [
-    'Interior designs décor',
-    'Swahili weddings',
-    'Pelican lights hiring',
-    'Fairy lights hiring and installation',
-    'Birthday parties',
-    'Minimalist weddings',
-    'Photo shoot setups',
-    'Photo shoot packages',
-    'Music videos setups',
-    'Events planning',
-    'Project budgeting',
-    'Art and setups design',
-    'Art props',
-    'Advert setups',
-    'Location scouting',
-    'Wallpaper mounting',
-    'Wallpaper suppliers',
-    'Electrical installation plans',
-    'Electrical quotation',
-    'Electrical installation materials supply',
-    'Three phase motors installation and repair',
-    'Motor power controls',
-    'Single phase motors installation and repair',
-    'Electrician tools supply',
-    'Electrical wiring installations and repair',
-    'Cctv installation',
-    'Networking',
-    'Creative designs',
-  ];
-
   const iconFor = (label) => {
     const v = label.toLowerCase();
     if (v.includes('wedding')) return <FaRing className="text-pink-600" />;
@@ -101,11 +62,43 @@ function Home() {
   };
 
   const [query, setQuery] = useState('');
+
   const filteredServices = useMemo(() => {
+    const rawServices = [
+      'Interior designs décor',
+      'Swahili weddings',
+      'Pelican lights hiring',
+      'Fairy lights hiring and installation',
+      'Birthday parties',
+      'Minimalist weddings',
+      'Photo shoot setups',
+      'Photo shoot packages',
+      'Music videos setups',
+      'Events planning',
+      'Project budgeting',
+      'Art and setups design',
+      'Art props',
+      'Advert setups',
+      'Location scouting',
+      'Wallpaper mounting',
+      'Wallpaper suppliers',
+      'Electrical installation plans',
+      'Electrical quotation',
+      'Electrical installation materials supply',
+      'Three phase motors installation and repair',
+      'Motor power controls',
+      'Single phase motors installation and repair',
+      'Electrician tools supply',
+      'Electrical wiring installations and repair',
+      'Cctv installation',
+      'Networking',
+      'Creative designs',
+    ];
+
     const q = query.trim().toLowerCase();
     if (!q) return rawServices;
     return rawServices.filter((s) => s.toLowerCase().includes(q));
-  }, [query, rawServices]);
+  }, [query]);
 
   return (
     <div className="relative p-4 md:p-10 min-h-screen w-full overflow-x-hidden">
@@ -140,21 +133,135 @@ function Home() {
         </p>
       </div>
 
-      {/* Management with animated border around it */}
-      <div className="max-w-4xl mx-auto mb-8 md:mb-12 px-2 md:px-4">
-        <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-center text-gray-800 border-b-4 border-blue-400 pb-2">
-          Management
-        </h2>
-        {/* Surround with animated border - increased border thickness to border-12 */}
-        <div className="border-8 md:border-12 rounded-lg p-1 animate-borderColor">
-          <div className="overflow-hidden rounded-lg shadow-lg hover:scale-105 transform transition-transform duration-300 border-4 border-transparent">
-            {/* animated border with color cycles */}
-            <div className="border-4 rounded-lg p-2 bg-white">
-              <img
-                src={Management}
-                alt="Management"
-                className="w-full h-auto object-cover"
-              />
+      {/* Management Section - Properly Sized Image */}
+      <div className="max-w-6xl mx-auto mb-8 md:mb-16 px-2 md:px-4">
+        <div className="text-center mb-6 md:mb-8">
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-2">
+            Our Management Team
+          </h2>
+          <p className="text-gray-600 text-sm md:text-lg max-w-2xl mx-auto">
+            Meet the dedicated professionals driving our vision forward with expertise and innovation
+          </p>
+        </div>
+
+        {/* Management Image Container */}
+        <div className="flex justify-center">
+          <div className="w-full max-w-4xl relative group">
+            
+            {/* Outer Animated Border Layer */}
+            <div className="
+              p-1 
+              md:p-2 
+              rounded-xl 
+              bg-gradient-to-r 
+              from-blue-500 
+              via-purple-600 
+              to-pink-500 
+              animate-borderColor
+              shadow-xl
+              hover:shadow-2xl
+              transition-all
+              duration-500
+              w-full
+            ">
+              
+              {/* Image Container - Proper Size */}
+              <div className="
+                relative 
+                overflow-hidden 
+                rounded-lg 
+                bg-white 
+                shadow-inner
+                w-full
+                h-[200px]
+                sm:h-[250px]
+                md:h-[300px]
+                lg:h-[350px]
+                xl:h-[380px]
+              ">
+                
+                {/* Management Image - Properly Sized and Visible */}
+                <img
+                  src={Management}
+                  alt="ELECTROMATRIX ART DECO LTD. Management Team"
+                  className="
+                    w-full 
+                    h-full 
+                    object-contain 
+                    rounded-lg
+                    transition-all 
+                    duration-500
+                    ease-in-out
+                    hover:scale-105
+                    cursor-pointer
+                  "
+                />
+                
+                {/* Hover Overlay Effect */}
+                <div className="
+                  absolute 
+                  inset-0 
+                  bg-gradient-to-br 
+                  from-blue-500/20 
+                  via-purple-500/10 
+                  to-pink-500/20 
+                  opacity-0 
+                  group-hover:opacity-100 
+                  transition-all 
+                  duration-300 
+                  rounded-lg 
+                  flex 
+                  items-center 
+                  justify-center
+                  pointer-events-none
+                ">
+                  <div className="
+                    opacity-0 
+                    group-hover:opacity-100 
+                    transform 
+                    translate-y-4 
+                    group-hover:translate-y-0 
+                    transition-all 
+                    duration-300 
+                    text-white 
+                    text-center 
+                    p-4
+                    bg-black/50 
+                    rounded-xl
+                    backdrop-blur-sm
+                  ">
+                    <h3 className="text-lg md:text-2xl font-bold mb-2 drop-shadow-lg">Professional Leadership</h3>
+                    <p className="text-sm md:text-base drop-shadow-lg">Driving Excellence & Innovation</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Caption */}
+            <div className="text-center mt-4 md:mt-6 px-4">
+              <p className="
+                text-gray-700 
+                text-sm 
+                md:text-base 
+                font-medium
+                bg-gradient-to-r 
+                from-blue-50 
+                via-white 
+                to-purple-50
+                backdrop-blur-sm 
+                py-3 
+                px-6 
+                rounded-lg 
+                inline-block
+                shadow-lg
+                border
+                border-gray-200
+                hover:shadow-xl
+                transition-all
+                duration-300
+              ">
+                🏆 Experienced leadership committed to quality and customer satisfaction 🏆
+              </p>
             </div>
           </div>
         </div>
@@ -273,7 +380,7 @@ function Home() {
             type="button"
             onClick={() => setQuery('')}
             className="px-2 py-1 md:px-3 md:py-1.5 rounded-full bg-gray-100 text-gray-700 text-xs md:text-sm hover:bg-gray-200 transition"
-          >
+            >
             Clear
           </button>
         </div>
@@ -293,7 +400,7 @@ function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {[Working1, Working2, Working3, Working4, Working5, Working6, Working7, Working8, Working9, Working10, Working11, Working12].map((image, index) => (
             <div key={index} className="group relative overflow-hidden rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
-              <img src={image} alt={`Working image ${index + 1}`} className="w-full h-40 md:h-64 object-cover" />
+              <img src={image} alt={`Working ${index + 1}`} className="w-full h-40 md:h-64 object-cover" />
             </div>
           ))}
         </div>
@@ -367,15 +474,15 @@ function Home() {
           50% { background-color: #bfdbfe; }
           100% { background-color: #3b82f6; }
         }
-        .animate-blink {
-          animation: blinkBackground 15s infinite;
-        }
         @keyframes borderColorCycle {
           0% { border-color: #3b82f6; }
           25% { border-color: #ef4444; }
           50% { border-color: #10b981; }
           75% { border-color: #8b5cf6; }
           100% { border-color: #3b82f6; }
+        }
+        .animate-blink {
+          animation: blinkBackground 15s infinite;
         }
         .animate-borderColor {
           animation: borderColorCycle 4s linear infinite;
