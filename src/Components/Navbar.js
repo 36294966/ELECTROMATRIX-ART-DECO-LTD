@@ -615,14 +615,14 @@ function Navbar() {
         )}
       </nav>
 
-      {/* Authentication Modal */}
+      {/* Authentication Modal - Compact and Attractive */}
       {showAuthModal && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 backdrop-blur-md">
-          <div className="bg-white rounded-3xl shadow-4xl w-full max-w-md mx-auto transform transition-all duration-300 scale-95 hover:scale-100">
+          <div className="bg-white rounded-3xl shadow-4xl w-full max-w-sm mx-auto transform transition-all duration-300 scale-95 hover:scale-100 max-h-[90vh] overflow-y-auto">
             {/* Modal Header */}
-            <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-purple-700 p-8 rounded-t-3xl">
+            <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-purple-700 p-6 rounded-t-3xl sticky top-0">
               <div className="flex justify-between items-center">
-                <h2 className="text-3xl font-bold text-white">
+                <h2 className="text-2xl font-bold text-white">
                   {authMode === 'signin' && 'Welcome Back'}
                   {authMode === 'signup' && 'Join Us Today'}
                   {authMode === 'forgot' && 'Reset Password'}
@@ -631,10 +631,10 @@ function Navbar() {
                   onClick={closeAuthModal}
                   className="text-white hover:text-yellow-300 transition-colors transform hover:scale-110"
                 >
-                  <XIcon className="w-7 h-7" />
+                  <XIcon className="w-6 h-6" />
                 </button>
               </div>
-              <p className="text-blue-100 mt-3 text-lg">
+              <p className="text-blue-100 mt-2 text-sm">
                 {authMode === 'signin' && 'Sign in to access your account'}
                 {authMode === 'signup' && 'Create your account to get started'}
                 {authMode === 'forgot' && 'Enter your email to reset password'}
@@ -642,12 +642,12 @@ function Navbar() {
             </div>
 
             {/* Modal Body */}
-            <div className="p-8">
-              <form onSubmit={handleAuthSubmit} className="space-y-6">
+            <div className="p-6">
+              <form onSubmit={handleAuthSubmit} className="space-y-4">
                 {authMode === 'signup' && (
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-sm font-bold text-gray-700 mb-2">
+                      <label className="block text-xs font-bold text-gray-700 mb-1">
                         First Name *
                       </label>
                       <input
@@ -656,12 +656,12 @@ function Navbar() {
                         value={formData.firstName}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all hover:border-blue-300"
+                        className="w-full px-3 py-2 text-sm border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all hover:border-blue-300"
                         placeholder="John"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-bold text-gray-700 mb-2">
+                      <label className="block text-xs font-bold text-gray-700 mb-1">
                         Last Name *
                       </label>
                       <input
@@ -670,7 +670,7 @@ function Navbar() {
                         value={formData.lastName}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all hover:border-blue-300"
+                        className="w-full px-3 py-2 text-sm border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all hover:border-blue-300"
                         placeholder="Doe"
                       />
                     </div>
@@ -678,7 +678,7 @@ function Navbar() {
                 )}
 
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-2">
+                  <label className="block text-xs font-bold text-gray-700 mb-1">
                     Email Address *
                   </label>
                   <input
@@ -687,14 +687,14 @@ function Navbar() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all hover:border-blue-300"
+                    className="w-full px-3 py-2 text-sm border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all hover:border-blue-300"
                     placeholder="your@email.com"
                   />
                 </div>
 
                 {(authMode === 'signin' || authMode === 'signup') && (
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                    <label className="block text-xs font-bold text-gray-700 mb-1">
                       Password *
                     </label>
                     <div className="relative">
@@ -704,31 +704,31 @@ function Navbar() {
                         value={formData.password}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all hover:border-blue-300 pr-12"
+                        className="w-full px-3 py-2 text-sm border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all hover:border-blue-300 pr-10"
                         placeholder="••••••••"
                         minLength={6}
                       />
                       <button
                         type="button"
                         onClick={togglePasswordVisibility}
-                        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-blue-600 transition-colors"
+                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-blue-600 transition-colors"
                       >
                         {showPassword ? (
-                          <EyeOffIcon className="w-6 h-6" />
+                          <EyeOffIcon className="w-4 h-4" />
                         ) : (
-                          <EyeIcon className="w-6 h-6" />
+                          <EyeIcon className="w-4 h-4" />
                         )}
                       </button>
                     </div>
                     {authMode === 'signup' && (
-                      <p className="text-xs text-gray-500 mt-2">Password must be at least 6 characters long</p>
+                      <p className="text-xs text-gray-500 mt-1">Password must be at least 6 characters</p>
                     )}
                   </div>
                 )}
 
                 {authMode === 'signup' && (
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                    <label className="block text-xs font-bold text-gray-700 mb-1">
                       Confirm Password *
                     </label>
                     <input
@@ -737,7 +737,7 @@ function Navbar() {
                       value={formData.confirmPassword}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all hover:border-blue-300"
+                      className="w-full px-3 py-2 text-sm border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all hover:border-blue-300"
                       placeholder="••••••••"
                       minLength={6}
                     />
@@ -749,7 +749,7 @@ function Navbar() {
                     <button
                       type="button"
                       onClick={() => setAuthMode('forgot')}
-                      className="text-sm text-blue-600 hover:text-blue-800 font-semibold transition-colors"
+                      className="text-xs text-blue-600 hover:text-blue-800 font-semibold transition-colors"
                     >
                       Forgot Password?
                     </button>
@@ -758,7 +758,7 @@ function Navbar() {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-700 text-white py-4 px-6 rounded-xl hover:from-blue-700 hover:to-purple-800 transition-all duration-300 font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 border-2 border-blue-500"
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-700 text-white py-3 px-4 rounded-lg hover:from-blue-700 hover:to-purple-800 transition-all duration-300 font-bold text-base shadow-xl hover:shadow-2xl transform hover:scale-105 border-2 border-blue-500"
                 >
                   {authMode === 'signin' && 'Sign In'}
                   {authMode === 'signup' && 'Create Account'}
@@ -767,9 +767,9 @@ function Navbar() {
               </form>
 
               {/* Auth Mode Toggle */}
-              <div className="mt-8 text-center">
+              <div className="mt-6 text-center">
                 {authMode === 'signin' && (
-                  <p className="text-gray-600 text-lg">
+                  <p className="text-gray-600 text-sm">
                     Don't have an account?{' '}
                     <button
                       type="button"
@@ -781,7 +781,7 @@ function Navbar() {
                   </p>
                 )}
                 {authMode === 'signup' && (
-                  <p className="text-gray-600 text-lg">
+                  <p className="text-gray-600 text-sm">
                     Already have an account?{' '}
                     <button
                       type="button"
@@ -793,7 +793,7 @@ function Navbar() {
                   </p>
                 )}
                 {authMode === 'forgot' && (
-                  <p className="text-gray-600 text-lg">
+                  <p className="text-gray-600 text-sm">
                     Remember your password?{' '}
                     <button
                       type="button"
@@ -804,6 +804,31 @@ function Navbar() {
                     </button>
                   </p>
                 )}
+              </div>
+
+              {/* Quick Features */}
+              <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border-2 border-blue-100">
+                <h3 className="text-sm font-bold text-gray-800 mb-2 text-center">
+                  Why Join Electromatrix?
+                </h3>
+                <div className="grid grid-cols-2 gap-2 text-xs text-gray-600">
+                  <div className="flex items-center space-x-1">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                    <span>Premium Services</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                    <span>24/7 Support</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                    <span>Expert Team</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                    <span>Fast Delivery</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
