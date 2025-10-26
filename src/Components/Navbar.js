@@ -180,7 +180,7 @@ function Navbar() {
     setShowPassword(!showPassword);
   };
 
-  // Function to get user greeting
+  // Function to get user greeting - FIXED to show "Hi, Name"
   const getUserGreeting = () => {
     if (!userData) return 'Hi!';
     
@@ -391,7 +391,7 @@ function Navbar() {
           <div className="flex items-center space-x-3 ml-4 pl-4 border-l-2 border-blue-300">
             {isLoggedIn ? (
               <div className="flex items-center space-x-4">
-                {/* User Greeting - Desktop */}
+                {/* User Greeting - Desktop - FIXED to show "Hi, Name" */}
                 <div className="flex items-center space-x-3 px-5 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl border-2 border-blue-300 shadow-2xl">
                   <UserIcon className="w-5 h-5 text-yellow-300" />
                   <span className="text-yellow-300 text-base font-bold">
@@ -494,7 +494,7 @@ function Navbar() {
               <div className="mt-2 space-y-3 pt-3 border-t-2 border-purple-400/30">
                 {isLoggedIn ? (
                   <div className="space-y-3">
-                    {/* User Greeting - Mobile */}
+                    {/* User Greeting - Mobile - FIXED to show "Hi, Name" */}
                     <div className="flex items-center space-x-3 p-3 w-full bg-gradient-to-r from-purple-600 to-indigo-700 rounded-xl border-2 border-purple-400 shadow-lg">
                       <div className="p-2 bg-yellow-400 rounded-lg flex-shrink-0">
                         <UserIcon className="w-4 h-4 text-purple-800" />
@@ -578,11 +578,11 @@ function Navbar() {
           <div className="md:hidden flex items-center space-x-3">
             {isLoggedIn ? (
               <div className="flex items-center space-x-3">
-                {/* User Greeting - Small Mobile */}
+                {/* User Greeting - Small Mobile - FIXED to show "Hi, Name" */}
                 <div className="flex items-center space-x-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl border-2 border-blue-300 shadow-lg">
                   <UserIcon className="w-4 h-4 text-yellow-300" />
                   <span className="text-yellow-300 text-sm font-bold">
-                    {getShortName()}
+                    {getUserGreeting()}
                   </span>
                 </div>
                 <button
