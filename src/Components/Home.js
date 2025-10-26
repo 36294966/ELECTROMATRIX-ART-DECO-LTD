@@ -133,13 +133,13 @@ function Home() {
         </p>
       </div>
 
-      {/* Management Section - Properly Sized Image */}
-      <div className="max-w-6xl mx-auto mb-8 md:mb-16 px-2 md:px-4">
+      {/* Management Section - Blue Background */}
+      <div className="max-w-6xl mx-auto mb-8 md:mb-16 px-2 md:px-4 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl shadow-2xl p-6 md:p-8">
         <div className="text-center mb-6 md:mb-8">
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-2">
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-2">
             Our Management Team
           </h2>
-          <p className="text-gray-600 text-sm md:text-lg max-w-2xl mx-auto">
+          <p className="text-blue-100 text-sm md:text-lg max-w-2xl mx-auto">
             Meet the dedicated professionals driving our vision forward with expertise and innovation
           </p>
         </div>
@@ -154,8 +154,8 @@ function Home() {
               md:p-2 
               rounded-xl 
               bg-gradient-to-r 
-              from-blue-500 
-              via-purple-600 
+              from-blue-400 
+              via-purple-500 
               to-pink-500 
               animate-borderColor
               shadow-xl
@@ -240,14 +240,14 @@ function Home() {
             {/* Caption */}
             <div className="text-center mt-4 md:mt-6 px-4">
               <p className="
-                text-gray-700 
+                text-white 
                 text-sm 
                 md:text-base 
                 font-medium
                 bg-gradient-to-r 
-                from-blue-50 
-                via-white 
-                to-purple-50
+                from-blue-500/80 
+                via-purple-500/80 
+                to-blue-600/80
                 backdrop-blur-sm 
                 py-3 
                 px-6 
@@ -255,7 +255,7 @@ function Home() {
                 inline-block
                 shadow-lg
                 border
-                border-gray-200
+                border-blue-300
                 hover:shadow-xl
                 transition-all
                 duration-300
