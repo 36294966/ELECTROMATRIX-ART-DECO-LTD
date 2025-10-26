@@ -228,7 +228,6 @@ function Navbar() {
               hover:shadow-4xl
               hover:rotate-1
               cursor-pointer
-              group
               w-48 h-16
               sm:w-56 sm:h-18
               md:w-64 md:h-20
@@ -347,7 +346,7 @@ function Navbar() {
           </div>
         </div>
 
-        {/* Hamburger icon for small screens */}
+        {/* Hamburger icon for small screens - Single Cross/Hamburger */}
         <div className="md:hidden z-50">
           <button
             onClick={toggleMenu}
@@ -433,136 +432,143 @@ function Navbar() {
           </div>
         </div>
 
-        {/* Small screen menu - Enhanced Design */}
+        {/* Small screen menu - Extended Height with Perfect Fit */}
         {isMenuOpen && (
-          <div className="absolute top-full right-0 left-0 bg-gradient-to-b from-white via-blue-50 to-purple-50 rounded-b-3xl shadow-3xl z-40 flex flex-col border-t-4 border-blue-400 backdrop-blur-lg">
-            {/* Mobile Logo in Menu */}
-            <div className="flex items-center justify-center p-6 bg-gradient-to-r from-blue-600 via-blue-700 to-purple-700 border-b-2 border-blue-300">
-              <div className="
-                relative 
-                bg-gradient-to-br from-white via-blue-50 to-purple-50
-                shadow-2xl 
-                border-4 border-white
-                overflow-hidden
-                flex
-                items-center
-                justify-center
-                w-64 h-20
-                rounded-2xl
-                group
-              ">
-                <div className="
-                  absolute 
-                  inset-2 
-                  bg-gradient-to-br from-blue-100 via-white to-purple-100 
-                  rounded-xl
-                  shadow-inner
-                  flex
-                  items-center
-                  justify-center
-                  overflow-hidden
-                  w-[calc(100%-16px)]
-                  h-[calc(100%-16px)]
-                ">
-                  <img
-                    src={Logo}
-                    alt="ELECTROMATRIX ART DECO LTD."
-                    className="
-                      w-[95%]
-                      h-[95%]
-                      object-contain
-                      group-hover:scale-105
-                      transition-transform
-                      duration-300
-                    "
-                    style={{
-                      filter: 'brightness(1.08) contrast(1.15)',
-                      transformOrigin: 'center'
-                    }}
-                  />
+          <div className="fixed top-0 left-0 right-0 h-3/4 bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 z-40 flex flex-col rounded-b-3xl shadow-4xl border-b-2 border-purple-400 border-l-2 border-r-2 border-purple-300 overflow-hidden">
+            {/* Welcome Header */}
+            <div className="px-6 py-4 text-center border-b-2 border-purple-400/30 bg-gradient-to-r from-purple-800 to-indigo-800">
+              <h2 className="text-xl font-bold text-yellow-300 mb-1">
+                Welcome to Electromatrix
+              </h2>
+              <p className="text-purple-200 text-xs">
+                Your trusted technology partner
+              </p>
+            </div>
+
+            {/* Navigation Links - Compact and Perfectly Fitted */}
+            <div className="flex-1 flex flex-col p-4 space-y-3 overflow-y-auto">
+              {/* Main Navigation */}
+              <Link
+                to="/"
+                className="flex items-center space-x-3 p-3 w-full text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-700 rounded-xl transition-all duration-300 group border-2 border-purple-500 shadow-lg hover:shadow-xl transform hover:scale-105"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <div className="p-2 bg-yellow-400 rounded-lg group-hover:bg-yellow-300 transition-colors flex-shrink-0">
+                  <HomeIcon className="w-4 h-4 text-purple-800" />
                 </div>
-                <div className="
-                  absolute 
-                  inset-0 
-                  border-2 
-                  border-gradient-to-r from-blue-300/60 via-purple-300/60 to-blue-300/60
-                  rounded-2xl
-                  pointer-events-none
-                  shadow-lg
-                "></div>
+                <div className="flex-1 text-left min-w-0">
+                  <span className="text-base font-bold group-hover:text-yellow-300 transition-colors block">Home</span>
+                  <p className="text-purple-200 text-xs mt-0.5 truncate">Start your journey with us</p>
+                </div>
+              </Link>
+              
+              <Link
+                to="/book-us"
+                className="flex items-center space-x-3 p-3 w-full text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-700 rounded-xl transition-all duration-300 group border-2 border-purple-500 shadow-lg hover:shadow-xl transform hover:scale-105"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <div className="p-2 bg-yellow-400 rounded-lg group-hover:bg-yellow-300 transition-colors flex-shrink-0">
+                  <ClipboardListIcon className="w-4 h-4 text-purple-800" />
+                </div>
+                <div className="flex-1 text-left min-w-0">
+                  <span className="text-base font-bold group-hover:text-yellow-300 transition-colors block">Book Us</span>
+                  <p className="text-purple-200 text-xs mt-0.5 truncate">Schedule our services</p>
+                </div>
+              </Link>
+              
+              <Link
+                to="/contact"
+                className="flex items-center space-x-3 p-3 w-full text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-700 rounded-xl transition-all duration-300 group border-2 border-purple-500 shadow-lg hover:shadow-xl transform hover:scale-105"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <div className="p-2 bg-yellow-400 rounded-lg group-hover:bg-yellow-300 transition-colors flex-shrink-0">
+                  <PhoneIcon className="w-4 h-4 text-purple-800" />
+                </div>
+                <div className="flex-1 text-left min-w-0">
+                  <span className="text-base font-bold group-hover:text-yellow-300 transition-colors block">Contact</span>
+                  <p className="text-purple-200 text-xs mt-0.5 truncate">Get in touch with us</p>
+                </div>
+              </Link>
+
+              {/* Authentication Section - Compact Design */}
+              <div className="mt-2 space-y-3 pt-3 border-t-2 border-purple-400/30">
+                {isLoggedIn ? (
+                  <div className="space-y-3">
+                    {/* User Greeting - Mobile */}
+                    <div className="flex items-center space-x-3 p-3 w-full bg-gradient-to-r from-purple-600 to-indigo-700 rounded-xl border-2 border-purple-400 shadow-lg">
+                      <div className="p-2 bg-yellow-400 rounded-lg flex-shrink-0">
+                        <UserIcon className="w-4 h-4 text-purple-800" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <span className="text-sm font-bold text-yellow-300 block truncate">
+                          {getUserGreeting()}
+                        </span>
+                        <span className="text-xs text-purple-200 block truncate">
+                          {userData.email}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    {/* Logout Button - Mobile */}
+                    <button
+                      onClick={handleLogout}
+                      className="flex items-center space-x-3 p-3 w-full text-white hover:bg-gradient-to-r hover:from-red-600 hover:to-red-700 rounded-xl transition-all duration-300 group border-2 border-red-400 bg-gradient-to-r from-red-600 to-red-700 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    >
+                      <div className="p-2 bg-white rounded-lg group-hover:bg-red-100 transition-colors flex-shrink-0">
+                        <LogoutIcon className="w-4 h-4 text-red-600" />
+                      </div>
+                      <span className="text-sm font-bold group-hover:text-yellow-300 transition-colors">Logout</span>
+                    </button>
+                  </div>
+                ) : (
+                  <div className="flex flex-col space-y-3">
+                    <button
+                      onClick={() => handleAuthModal('signin')}
+                      className="flex items-center space-x-3 p-3 w-full text-white hover:bg-gradient-to-r hover:from-green-600 hover:to-green-700 rounded-xl transition-all duration-300 group border-2 border-green-400 bg-gradient-to-r from-green-600 to-green-700 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    >
+                      <div className="p-2 bg-white rounded-lg group-hover:bg-green-100 transition-colors flex-shrink-0">
+                        <UserIcon className="w-4 h-4 text-green-600" />
+                      </div>
+                      <div className="flex-1 text-left min-w-0">
+                        <span className="text-sm font-bold group-hover:text-yellow-300 transition-colors block">Sign In</span>
+                        <p className="text-green-200 text-xs mt-0.5">Access your account</p>
+                      </div>
+                    </button>
+                    <button
+                      onClick={() => handleAuthModal('signup')}
+                      className="flex items-center space-x-3 p-3 w-full bg-gradient-to-r from-yellow-500 via-yellow-600 to-orange-500 hover:from-yellow-600 hover:via-orange-500 hover:to-yellow-600 text-white rounded-xl transition-all duration-300 font-bold border-2 border-yellow-400 shadow-lg hover:shadow-xl transform hover:scale-105 group"
+                    >
+                      <div className="p-2 bg-white rounded-lg group-hover:bg-orange-100 transition-colors flex-shrink-0">
+                        <UserIcon className="w-4 h-4 text-orange-600" />
+                      </div>
+                      <div className="flex-1 text-left min-w-0">
+                        <span className="text-sm font-bold block">Create Account</span>
+                        <p className="text-yellow-200 text-xs mt-0.5">Join us today</p>
+                      </div>
+                    </button>
+                  </div>
+                )}
+              </div>
+
+              {/* Additional Info Section */}
+              <div className="mt-2 p-3 bg-gradient-to-r from-purple-700/50 to-indigo-700/50 rounded-xl border-2 border-purple-400/30">
+                <p className="text-yellow-300 text-xs font-bold text-center">
+                  Premium Technology Solutions
+                </p>
+                <p className="text-purple-200 text-xs text-center mt-1">
+                  Innovation & Excellence
+                </p>
               </div>
             </div>
 
-            <Link
-              to="/"
-              className="flex items-center space-x-4 p-5 w-full text-gray-800 hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 transition-all duration-300 group border-b border-blue-100"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <HomeIcon className="w-6 h-6 text-blue-600 group-hover:text-blue-700 transition-colors" />
-              <span className="text-lg font-bold group-hover:text-blue-700 transition-colors">Home</span>
-            </Link>
-            
-            <Link
-              to="/book-us"
-              className="flex items-center space-x-4 p-5 w-full text-gray-800 hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 transition-all duration-300 group border-b border-blue-100"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <ClipboardListIcon className="w-6 h-6 text-blue-600 group-hover:text-blue-700 transition-colors" />
-              <span className="text-lg font-bold group-hover:text-blue-700 transition-colors">Book Us</span>
-            </Link>
-            
-            <Link
-              to="/contact"
-              className="flex items-center space-x-4 p-5 w-full text-gray-800 hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 transition-all duration-300 group border-b border-blue-100"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <PhoneIcon className="w-6 h-6 text-blue-600 group-hover:text-blue-700 transition-colors" />
-              <span className="text-lg font-bold group-hover:text-blue-700 transition-colors">Contact</span>
-            </Link>
-
-            {/* Authentication Section - Small Screen */}
-            <div className="p-4 bg-gradient-to-b from-blue-50 to-white rounded-b-3xl">
-              {isLoggedIn ? (
-                <div className="space-y-3">
-                  {/* User Greeting - Mobile */}
-                  <div className="flex items-center space-x-4 p-4 w-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl border-2 border-blue-300 shadow-2xl">
-                    <UserIcon className="w-6 h-6 text-yellow-300" />
-                    <div>
-                      <span className="text-lg font-bold text-yellow-300 block">
-                        {getUserGreeting()}
-                      </span>
-                      <span className="text-sm text-blue-200 block">
-                        {userData.email}
-                      </span>
-                    </div>
-                  </div>
-                  
-                  {/* Logout Button - Mobile */}
-                  <button
-                    onClick={handleLogout}
-                    className="flex items-center space-x-4 p-4 w-full text-white hover:bg-red-600 rounded-2xl transition-all duration-300 group border-2 border-red-400 bg-gradient-to-r from-red-500 to-red-600 shadow-2xl"
-                  >
-                    <LogoutIcon className="w-6 h-6 text-white group-hover:text-yellow-300 transition-colors" />
-                    <span className="text-lg font-bold group-hover:text-yellow-300 transition-colors">Logout</span>
-                  </button>
-                </div>
-              ) : (
-                <div className="flex flex-col space-y-3">
-                  <button
-                    onClick={() => handleAuthModal('signin')}
-                    className="flex items-center space-x-4 p-4 w-full text-white hover:bg-green-600 rounded-2xl transition-all duration-300 group border-2 border-green-400 bg-gradient-to-r from-green-500 to-green-600 shadow-2xl"
-                  >
-                    <UserIcon className="w-6 h-6 text-white group-hover:text-yellow-300 transition-colors" />
-                    <span className="text-lg font-bold group-hover:text-yellow-300 transition-colors">Sign In</span>
-                  </button>
-                  <button
-                    onClick={() => handleAuthModal('signup')}
-                    className="flex items-center justify-center space-x-3 p-4 w-full bg-gradient-to-r from-yellow-500 via-yellow-600 to-orange-500 hover:from-yellow-600 hover:via-orange-500 hover:to-yellow-600 text-white rounded-2xl transition-all duration-300 font-bold text-lg border-2 border-yellow-400 shadow-3xl transform hover:scale-105"
-                  >
-                    <span>Create Account</span>
-                  </button>
-                </div>
-              )}
+            {/* Footer */}
+            <div className="p-3 text-center bg-gradient-to-r from-purple-800 to-indigo-800 border-t-2 border-purple-400/30">
+              <p className="text-yellow-300 text-sm font-bold mb-1">
+                ELECTROMATRIX
+              </p>
+              <p className="text-purple-200 text-xs">
+                Art Deco Ltd. © 2024
+              </p>
             </div>
           </div>
         )}
@@ -808,8 +814,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-
-
-
-
