@@ -432,11 +432,11 @@ function Navbar() {
           </div>
         </div>
 
-        {/* Small screen menu - Extended Height with Perfect Fit */}
+        {/* Small screen menu - Improved spacing and layout */}
         {isMenuOpen && (
           <div className="fixed top-0 left-0 right-0 h-3/4 bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 z-40 flex flex-col rounded-b-3xl shadow-4xl border-b-2 border-purple-400 border-l-2 border-r-2 border-purple-300 overflow-hidden">
             {/* Welcome Header */}
-            <div className="px-6 py-4 text-center border-b-2 border-purple-400/30 bg-gradient-to-r from-purple-800 to-indigo-800">
+            <div className="px-6 py-5 text-center border-b-2 border-purple-400/30 bg-gradient-to-r from-purple-800 to-indigo-800">
               <h2 className="text-xl font-bold text-yellow-300 mb-1">
                 Welcome to Electromatrix
               </h2>
@@ -445,65 +445,65 @@ function Navbar() {
               </p>
             </div>
 
-            {/* Navigation Links - Compact and Perfectly Fitted */}
-            <div className="flex-1 flex flex-col p-4 space-y-3 overflow-y-auto">
+            {/* Navigation Links - Improved spacing */}
+            <div className="flex-1 flex flex-col p-5 space-y-4 overflow-y-auto">
               {/* Main Navigation */}
               <Link
                 to="/"
-                className="flex items-center space-x-3 p-3 w-full text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-700 rounded-xl transition-all duration-300 group border-2 border-purple-500 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="flex items-center space-x-4 p-4 w-full text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-700 rounded-xl transition-all duration-300 group border-2 border-purple-500 shadow-lg hover:shadow-xl transform hover:scale-105"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <div className="p-2 bg-yellow-400 rounded-lg group-hover:bg-yellow-300 transition-colors flex-shrink-0">
-                  <HomeIcon className="w-4 h-4 text-purple-800" />
+                <div className="p-3 bg-yellow-400 rounded-lg group-hover:bg-yellow-300 transition-colors flex-shrink-0">
+                  <HomeIcon className="w-5 h-5 text-purple-800" />
                 </div>
                 <div className="flex-1 text-left min-w-0">
                   <span className="text-base font-bold group-hover:text-yellow-300 transition-colors block">Home</span>
-                  <p className="text-purple-200 text-xs mt-0.5 truncate">Start your journey with us</p>
+                  <p className="text-purple-200 text-xs mt-1 truncate">Start your journey with us</p>
                 </div>
               </Link>
               
               <Link
                 to="/book-us"
-                className="flex items-center space-x-3 p-3 w-full text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-700 rounded-xl transition-all duration-300 group border-2 border-purple-500 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="flex items-center space-x-4 p-4 w-full text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-700 rounded-xl transition-all duration-300 group border-2 border-purple-500 shadow-lg hover:shadow-xl transform hover:scale-105"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <div className="p-2 bg-yellow-400 rounded-lg group-hover:bg-yellow-300 transition-colors flex-shrink-0">
-                  <ClipboardListIcon className="w-4 h-4 text-purple-800" />
+                <div className="p-3 bg-yellow-400 rounded-lg group-hover:bg-yellow-300 transition-colors flex-shrink-0">
+                  <ClipboardListIcon className="w-5 h-5 text-purple-800" />
                 </div>
                 <div className="flex-1 text-left min-w-0">
                   <span className="text-base font-bold group-hover:text-yellow-300 transition-colors block">Book Us</span>
-                  <p className="text-purple-200 text-xs mt-0.5 truncate">Schedule our services</p>
+                  <p className="text-purple-200 text-xs mt-1 truncate">Schedule our services</p>
                 </div>
               </Link>
               
               <Link
                 to="/contact"
-                className="flex items-center space-x-3 p-3 w-full text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-700 rounded-xl transition-all duration-300 group border-2 border-purple-500 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="flex items-center space-x-4 p-4 w-full text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-700 rounded-xl transition-all duration-300 group border-2 border-purple-500 shadow-lg hover:shadow-xl transform hover:scale-105"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <div className="p-2 bg-yellow-400 rounded-lg group-hover:bg-yellow-300 transition-colors flex-shrink-0">
-                  <PhoneIcon className="w-4 h-4 text-purple-800" />
+                <div className="p-3 bg-yellow-400 rounded-lg group-hover:bg-yellow-300 transition-colors flex-shrink-0">
+                  <PhoneIcon className="w-5 h-5 text-purple-800" />
                 </div>
                 <div className="flex-1 text-left min-w-0">
                   <span className="text-base font-bold group-hover:text-yellow-300 transition-colors block">Contact</span>
-                  <p className="text-purple-200 text-xs mt-0.5 truncate">Get in touch with us</p>
+                  <p className="text-purple-200 text-xs mt-1 truncate">Get in touch with us</p>
                 </div>
               </Link>
 
-              {/* Authentication Section - Compact Design */}
-              <div className="mt-2 space-y-3 pt-3 border-t-2 border-purple-400/30">
+              {/* Authentication Section - Improved spacing */}
+              <div className="mt-4 space-y-4 pt-4 border-t-2 border-purple-400/30">
                 {isLoggedIn ? (
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     {/* User Greeting - Mobile - FIXED to show "Hi, Name" */}
-                    <div className="flex items-center space-x-3 p-3 w-full bg-gradient-to-r from-purple-600 to-indigo-700 rounded-xl border-2 border-purple-400 shadow-lg">
-                      <div className="p-2 bg-yellow-400 rounded-lg flex-shrink-0">
-                        <UserIcon className="w-4 h-4 text-purple-800" />
+                    <div className="flex items-center space-x-4 p-4 w-full bg-gradient-to-r from-purple-600 to-indigo-700 rounded-xl border-2 border-purple-400 shadow-lg">
+                      <div className="p-3 bg-yellow-400 rounded-lg flex-shrink-0">
+                        <UserIcon className="w-5 h-5 text-purple-800" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <span className="text-sm font-bold text-yellow-300 block truncate">
                           {getUserGreeting()}
                         </span>
-                        <span className="text-xs text-purple-200 block truncate">
+                        <span className="text-xs text-purple-200 block truncate mt-1">
                           {userData.email}
                         </span>
                       </div>
@@ -512,38 +512,38 @@ function Navbar() {
                     {/* Logout Button - Mobile */}
                     <button
                       onClick={handleLogout}
-                      className="flex items-center space-x-3 p-3 w-full text-white hover:bg-gradient-to-r hover:from-red-600 hover:to-red-700 rounded-xl transition-all duration-300 group border-2 border-red-400 bg-gradient-to-r from-red-600 to-red-700 shadow-lg hover:shadow-xl transform hover:scale-105"
+                      className="flex items-center space-x-4 p-4 w-full text-white hover:bg-gradient-to-r hover:from-red-600 hover:to-red-700 rounded-xl transition-all duration-300 group border-2 border-red-400 bg-gradient-to-r from-red-600 to-red-700 shadow-lg hover:shadow-xl transform hover:scale-105"
                     >
-                      <div className="p-2 bg-white rounded-lg group-hover:bg-red-100 transition-colors flex-shrink-0">
-                        <LogoutIcon className="w-4 h-4 text-red-600" />
+                      <div className="p-3 bg-white rounded-lg group-hover:bg-red-100 transition-colors flex-shrink-0">
+                        <LogoutIcon className="w-5 h-5 text-red-600" />
                       </div>
                       <span className="text-sm font-bold group-hover:text-yellow-300 transition-colors">Logout</span>
                     </button>
                   </div>
                 ) : (
-                  <div className="flex flex-col space-y-3">
+                  <div className="flex flex-col space-y-4">
                     <button
                       onClick={() => handleAuthModal('signin')}
-                      className="flex items-center space-x-3 p-3 w-full text-white hover:bg-gradient-to-r hover:from-green-600 hover:to-green-700 rounded-xl transition-all duration-300 group border-2 border-green-400 bg-gradient-to-r from-green-600 to-green-700 shadow-lg hover:shadow-xl transform hover:scale-105"
+                      className="flex items-center space-x-4 p-4 w-full text-white hover:bg-gradient-to-r hover:from-green-600 hover:to-green-700 rounded-xl transition-all duration-300 group border-2 border-green-400 bg-gradient-to-r from-green-600 to-green-700 shadow-lg hover:shadow-xl transform hover:scale-105"
                     >
-                      <div className="p-2 bg-white rounded-lg group-hover:bg-green-100 transition-colors flex-shrink-0">
-                        <UserIcon className="w-4 h-4 text-green-600" />
+                      <div className="p-3 bg-white rounded-lg group-hover:bg-green-100 transition-colors flex-shrink-0">
+                        <UserIcon className="w-5 h-5 text-green-600" />
                       </div>
                       <div className="flex-1 text-left min-w-0">
                         <span className="text-sm font-bold group-hover:text-yellow-300 transition-colors block">Sign In</span>
-                        <p className="text-green-200 text-xs mt-0.5">Access your account</p>
+                        <p className="text-green-200 text-xs mt-1">Access your account</p>
                       </div>
                     </button>
                     <button
                       onClick={() => handleAuthModal('signup')}
-                      className="flex items-center space-x-3 p-3 w-full bg-gradient-to-r from-yellow-500 via-yellow-600 to-orange-500 hover:from-yellow-600 hover:via-orange-500 hover:to-yellow-600 text-white rounded-xl transition-all duration-300 font-bold border-2 border-yellow-400 shadow-lg hover:shadow-xl transform hover:scale-105 group"
+                      className="flex items-center space-x-4 p-4 w-full bg-gradient-to-r from-yellow-500 via-yellow-600 to-orange-500 hover:from-yellow-600 hover:via-orange-500 hover:to-yellow-600 text-white rounded-xl transition-all duration-300 font-bold border-2 border-yellow-400 shadow-lg hover:shadow-xl transform hover:scale-105 group"
                     >
-                      <div className="p-2 bg-white rounded-lg group-hover:bg-orange-100 transition-colors flex-shrink-0">
-                        <UserIcon className="w-4 h-4 text-orange-600" />
+                      <div className="p-3 bg-white rounded-lg group-hover:bg-orange-100 transition-colors flex-shrink-0">
+                        <UserIcon className="w-5 h-5 text-orange-600" />
                       </div>
                       <div className="flex-1 text-left min-w-0">
                         <span className="text-sm font-bold block">Create Account</span>
-                        <p className="text-yellow-200 text-xs mt-0.5">Join us today</p>
+                        <p className="text-yellow-200 text-xs mt-1">Join us today</p>
                       </div>
                     </button>
                   </div>
@@ -551,7 +551,7 @@ function Navbar() {
               </div>
 
               {/* Additional Info Section */}
-              <div className="mt-2 p-3 bg-gradient-to-r from-purple-700/50 to-indigo-700/50 rounded-xl border-2 border-purple-400/30">
+              <div className="mt-4 p-4 bg-gradient-to-r from-purple-700/50 to-indigo-700/50 rounded-xl border-2 border-purple-400/30">
                 <p className="text-yellow-300 text-xs font-bold text-center">
                   Premium Technology Solutions
                 </p>
@@ -562,7 +562,7 @@ function Navbar() {
             </div>
 
             {/* Footer */}
-            <div className="p-3 text-center bg-gradient-to-r from-purple-800 to-indigo-800 border-t-2 border-purple-400/30">
+            <div className="p-4 text-center bg-gradient-to-r from-purple-800 to-indigo-800 border-t-2 border-purple-400/30">
               <p className="text-yellow-300 text-sm font-bold mb-1">
                 ELECTROMATRIX
               </p>
@@ -573,31 +573,31 @@ function Navbar() {
           </div>
         )}
 
-        {/* Authentication for small screens - Always visible when menu is closed */}
+        {/* Authentication for small screens - Improved spacing */}
         {!isMenuOpen && (
           <div className="md:hidden flex items-center space-x-3">
             {isLoggedIn ? (
               <div className="flex items-center space-x-3">
                 {/* User Greeting - Small Mobile - FIXED to show "Hi, Name" */}
-                <div className="flex items-center space-x-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl border-2 border-blue-300 shadow-lg">
+                <div className="flex items-center space-x-2 px-4 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl border-2 border-blue-300 shadow-lg">
                   <UserIcon className="w-4 h-4 text-yellow-300" />
                   <span className="text-yellow-300 text-sm font-bold">
-                    {getUserGreeting()}
+                    {getShortName()}
                   </span>
                 </div>
                 <button
                   onClick={handleLogout}
-                  className="flex items-center space-x-1 p-2 cursor-pointer hover:bg-red-500 rounded-xl transition-all duration-300 border-2 border-red-400 shadow-lg"
+                  className="flex items-center space-x-1 p-2.5 cursor-pointer hover:bg-red-500 rounded-xl transition-all duration-300 border-2 border-red-400 shadow-lg"
                   aria-label="Logout"
                 >
                   <LogoutIcon className="w-5 h-5 text-white" />
                 </button>
               </div>
             ) : (
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-3">
                 <button
                   onClick={() => handleAuthModal('signin')}
-                  className="flex items-center space-x-1 p-2 cursor-pointer hover:bg-green-500 rounded-xl transition-all duration-300 border-2 border-green-400 shadow-lg"
+                  className="flex items-center space-x-1 p-2.5 cursor-pointer hover:bg-green-500 rounded-xl transition-all duration-300 border-2 border-green-400 shadow-lg"
                   aria-label="Sign In"
                   title="Sign In"
                 >
@@ -605,7 +605,7 @@ function Navbar() {
                 </button>
                 <button
                   onClick={() => handleAuthModal('signup')}
-                  className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white px-3 py-2 rounded-xl transition-all duration-300 font-bold text-sm border-2 border-yellow-400 shadow-lg transform hover:scale-105"
+                  className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white px-4 py-2.5 rounded-xl transition-all duration-300 font-bold text-sm border-2 border-yellow-400 shadow-lg transform hover:scale-105"
                 >
                   Sign Up
                 </button>
