@@ -432,21 +432,21 @@ function Navbar() {
           </div>
         </div>
 
-        {/* Small screen menu - Improved spacing and layout */}
+        {/* Small screen menu - SIGNIFICANTLY IMPROVED SPACING */}
         {isMenuOpen && (
           <div className="fixed top-0 left-0 right-0 h-3/4 bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 z-40 flex flex-col rounded-b-3xl shadow-4xl border-b-2 border-purple-400 border-l-2 border-r-2 border-purple-300 overflow-hidden">
             {/* Welcome Header */}
-            <div className="px-6 py-5 text-center border-b-2 border-purple-400/30 bg-gradient-to-r from-purple-800 to-indigo-800">
-              <h2 className="text-xl font-bold text-yellow-300 mb-1">
+            <div className="px-6 py-6 text-center border-b-2 border-purple-400/30 bg-gradient-to-r from-purple-800 to-indigo-800">
+              <h2 className="text-xl font-bold text-yellow-300 mb-2">
                 Welcome to Electromatrix
               </h2>
-              <p className="text-purple-200 text-xs">
+              <p className="text-purple-200 text-sm">
                 Your trusted technology partner
               </p>
             </div>
 
-            {/* Navigation Links - Improved spacing */}
-            <div className="flex-1 flex flex-col p-5 space-y-4 overflow-y-auto">
+            {/* Navigation Links - SIGNIFICANTLY IMPROVED SPACING */}
+            <div className="flex-1 flex flex-col p-6 space-y-5 overflow-y-auto">
               {/* Main Navigation */}
               <Link
                 to="/"
@@ -490,10 +490,10 @@ function Navbar() {
                 </div>
               </Link>
 
-              {/* Authentication Section - Improved spacing */}
-              <div className="mt-4 space-y-4 pt-4 border-t-2 border-purple-400/30">
+              {/* Authentication Section - IMPROVED SPACING */}
+              <div className="mt-6 space-y-5 pt-5 border-t-2 border-purple-400/30">
                 {isLoggedIn ? (
-                  <div className="space-y-4">
+                  <div className="space-y-5">
                     {/* User Greeting - Mobile - FIXED to show "Hi, Name" */}
                     <div className="flex items-center space-x-4 p-4 w-full bg-gradient-to-r from-purple-600 to-indigo-700 rounded-xl border-2 border-purple-400 shadow-lg">
                       <div className="p-3 bg-yellow-400 rounded-lg flex-shrink-0">
@@ -521,7 +521,7 @@ function Navbar() {
                     </button>
                   </div>
                 ) : (
-                  <div className="flex flex-col space-y-4">
+                  <div className="flex flex-col space-y-5">
                     <button
                       onClick={() => handleAuthModal('signin')}
                       className="flex items-center space-x-4 p-4 w-full text-white hover:bg-gradient-to-r hover:from-green-600 hover:to-green-700 rounded-xl transition-all duration-300 group border-2 border-green-400 bg-gradient-to-r from-green-600 to-green-700 shadow-lg hover:shadow-xl transform hover:scale-105"
@@ -551,11 +551,11 @@ function Navbar() {
               </div>
 
               {/* Additional Info Section */}
-              <div className="mt-4 p-4 bg-gradient-to-r from-purple-700/50 to-indigo-700/50 rounded-xl border-2 border-purple-400/30">
+              <div className="mt-6 p-4 bg-gradient-to-r from-purple-700/50 to-indigo-700/50 rounded-xl border-2 border-purple-400/30">
                 <p className="text-yellow-300 text-xs font-bold text-center">
                   Premium Technology Solutions
                 </p>
-                <p className="text-purple-200 text-xs text-center mt-1">
+                <p className="text-purple-200 text-xs text-center mt-2">
                   Innovation & Excellence
                 </p>
               </div>
@@ -563,7 +563,7 @@ function Navbar() {
 
             {/* Footer */}
             <div className="p-4 text-center bg-gradient-to-r from-purple-800 to-indigo-800 border-t-2 border-purple-400/30">
-              <p className="text-yellow-300 text-sm font-bold mb-1">
+              <p className="text-yellow-300 text-sm font-bold mb-2">
                 ELECTROMATRIX
               </p>
               <p className="text-purple-200 text-xs">
@@ -573,31 +573,31 @@ function Navbar() {
           </div>
         )}
 
-        {/* Authentication for small screens - Improved spacing */}
+        {/* Authentication for small screens - IMPROVED SPACING */}
         {!isMenuOpen && (
-          <div className="md:hidden flex items-center space-x-3">
+          <div className="md:hidden flex items-center space-x-4">
             {isLoggedIn ? (
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-4">
                 {/* User Greeting - Small Mobile - FIXED to show "Hi, Name" */}
-                <div className="flex items-center space-x-2 px-4 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl border-2 border-blue-300 shadow-lg">
-                  <UserIcon className="w-4 h-4 text-yellow-300" />
+                <div className="flex items-center space-x-3 px-4 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl border-2 border-blue-300 shadow-lg">
+                  <UserIcon className="w-5 h-5 text-yellow-300" />
                   <span className="text-yellow-300 text-sm font-bold">
                     {getShortName()}
                   </span>
                 </div>
                 <button
                   onClick={handleLogout}
-                  className="flex items-center space-x-1 p-2.5 cursor-pointer hover:bg-red-500 rounded-xl transition-all duration-300 border-2 border-red-400 shadow-lg"
+                  className="flex items-center space-x-1 p-3 cursor-pointer hover:bg-red-500 rounded-xl transition-all duration-300 border-2 border-red-400 shadow-lg"
                   aria-label="Logout"
                 >
                   <LogoutIcon className="w-5 h-5 text-white" />
                 </button>
               </div>
             ) : (
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-4">
                 <button
                   onClick={() => handleAuthModal('signin')}
-                  className="flex items-center space-x-1 p-2.5 cursor-pointer hover:bg-green-500 rounded-xl transition-all duration-300 border-2 border-green-400 shadow-lg"
+                  className="flex items-center space-x-1 p-3 cursor-pointer hover:bg-green-500 rounded-xl transition-all duration-300 border-2 border-green-400 shadow-lg"
                   aria-label="Sign In"
                   title="Sign In"
                 >
@@ -605,7 +605,7 @@ function Navbar() {
                 </button>
                 <button
                   onClick={() => handleAuthModal('signup')}
-                  className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white px-4 py-2.5 rounded-xl transition-all duration-300 font-bold text-sm border-2 border-yellow-400 shadow-lg transform hover:scale-105"
+                  className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white px-4 py-3 rounded-xl transition-all duration-300 font-bold text-sm border-2 border-yellow-400 shadow-lg transform hover:scale-105"
                 >
                   Sign Up
                 </button>
