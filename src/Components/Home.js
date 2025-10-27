@@ -101,9 +101,9 @@ function Home() {
   }, [query]);
 
   return (
-    <div className="relative min-h-screen bg-gray-50" style={{ width: '100vw', overflowX: 'hidden' }}>
-      {/* Main Content Container - Absolutely Fixed Width */}
-      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-10" style={{ maxWidth: '100vw', boxSizing: 'border-box' }}>
+    <div className="relative min-h-screen w-full overflow-x-hidden bg-gray-50">
+      {/* Fixed width container to prevent side movement */}
+      <div className="w-full max-w-[100vw] mx-auto px-4 md:px-6 lg:px-8 py-4 md:py-10 overflow-hidden">
         
         {/* Blinking Heading */}
         <h1
@@ -117,7 +117,7 @@ function Home() {
         </h1>
 
         {/* Company Profile */}
-        <div className="max-w-4xl mx-auto bg-white p-4 md:p-8 rounded-lg shadow-lg mb-8 md:mb-12" style={{ width: '100%', boxSizing: 'border-box' }}>
+        <div className="max-w-4xl mx-auto bg-white p-4 md:p-8 rounded-lg shadow-lg mb-8 md:mb-12 overflow-hidden">
           <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-gray-800 border-b-4 border-blue-400 pb-2">
             Company Profile
           </h2>
@@ -137,7 +137,7 @@ function Home() {
         </div>
 
         {/* Management Section - Blue Background */}
-        <div className="max-w-6xl mx-auto mb-8 md:mb-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl shadow-2xl p-6 md:p-8" style={{ width: '100%', boxSizing: 'border-box' }}>
+        <div className="max-w-6xl mx-auto mb-8 md:mb-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl shadow-2xl p-6 md:p-8 overflow-hidden">
           <div className="text-center mb-6 md:mb-8">
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-2">
               Our Management Team
@@ -149,7 +149,7 @@ function Home() {
 
           {/* Management Image Container */}
           <div className="flex justify-center">
-            <div className="w-full max-w-4xl relative group" style={{ width: '100%' }}>
+            <div className="w-full max-w-4xl relative group overflow-hidden">
               
               {/* Outer Animated Border Layer */}
               <div className="
@@ -166,11 +166,13 @@ function Home() {
                 transition-all
                 duration-500
                 w-full
-              " style={{ width: '100%' }}>
+                overflow-hidden
+              ">
                 
                 {/* Image Container - Proper Size */}
                 <div className="
                   relative 
+                  overflow-hidden 
                   rounded-lg 
                   bg-white 
                   shadow-inner
@@ -180,7 +182,7 @@ function Home() {
                   md:h-[300px]
                   lg:h-[350px]
                   xl:h-[380px]
-                " style={{ width: '100%', overflow: 'hidden' }}>
+                ">
                   
                   {/* Management Image - Properly Sized and Visible */}
                   <img
@@ -197,7 +199,6 @@ function Home() {
                       hover:scale-105
                       cursor-pointer
                     "
-                    style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                   />
                   
                   {/* Hover Overlay Effect */}
@@ -217,7 +218,7 @@ function Home() {
                     items-center 
                     justify-center
                     pointer-events-none
-                  " style={{ width: '100%', height: '100%' }}>
+                  ">
                     <div className="
                       opacity-0 
                       group-hover:opacity-100 
@@ -241,7 +242,7 @@ function Home() {
               </div>
 
               {/* Caption */}
-              <div className="text-center mt-4 md:mt-6 px-4">
+              <div className="text-center mt-4 md:mt-6 px-4 overflow-hidden">
                 <p className="
                   text-white 
                   text-sm 
@@ -262,7 +263,7 @@ function Home() {
                   hover:shadow-xl
                   transition-all
                   duration-300
-                " style={{ maxWidth: '100%' }}>
+                ">
                   🏆 Experienced leadership committed to quality and customer satisfaction 🏆
                 </p>
               </div>
@@ -271,21 +272,15 @@ function Home() {
         </div>
 
         {/* Creative Inspirations */}
-        <div className="max-w-7xl mx-auto mb-8 md:mb-12" style={{ width: '100%', boxSizing: 'border-box' }}>
+        <div className="max-w-7xl mx-auto mb-8 md:mb-12 overflow-hidden">
           <h2 className="text-2xl md:text-4xl font-bold mb-6 md:mb-8 text-center text-gray-800">Our Creative Inspirations</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6" style={{ width: '100%' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {items.map((item, index) => (
               <div
                 key={index}
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out"
-                style={{ width: '100%' }}
               >
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
-                  className="w-full h-40 md:h-64 object-cover" 
-                  style={{ width: '100%' }}
-                />
+                <img src={item.image} alt={item.title} className="w-full h-40 md:h-64 object-cover" />
                 <div className="p-3 md:p-4 text-center">
                   <h3 className="text-lg md:text-2xl font-semibold text-gray-800 mb-1 md:mb-2 transition-transform hover:translate-y-1 duration-200">
                     {item.title}
@@ -297,16 +292,14 @@ function Home() {
         </div>
 
         {/* ——— NEW SECTION: What's Unique About Us (Blinking Card) ——— */}
-        <section className="max-w-7xl mx-auto bg-white p-4 md:p-8 rounded-lg shadow-lg mb-12 md:mb-16" style={{ width: '100%', boxSizing: 'border-box' }}>
+        <section className="max-w-7xl mx-auto bg-white p-4 md:p-8 rounded-lg shadow-lg mb-12 md:mb-16 overflow-hidden">
           <div className="text-center">
             <h2 className="text-2xl md:text-4xl font-extrabold text-gray-800 mb-4 md:mb-6">What's Unique About Us</h2>
           </div>
           <div
-            className="p-4 md:p-8 bg-blue-50 text-gray-700 border-2 border-blue-300 rounded-xl shadow-md animate-blink"
+            className="p-4 md:p-8 bg-blue-50 text-gray-700 border-2 border-blue-300 rounded-xl shadow-md animate-blink overflow-hidden"
             style={{
               animation: 'blinkBackground 15s infinite',
-              width: '100%',
-              boxSizing: 'border-box'
             }}
           >
             <p className="mb-3 md:mb-4 text-sm md:text-base">
@@ -328,18 +321,18 @@ function Home() {
         </section>
 
         {/* ——— OUR SERVICES SECTION ——— */}
-        <section className="max-w-7xl mx-auto bg-white/60 backdrop-blur-sm p-4 md:p-8 rounded-2xl shadow-xl mb-12 md:mb-16" style={{ width: '100%', boxSizing: 'border-box' }}>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 md:gap-4 mb-4 md:mb-6" style={{ width: '100%' }}>
-            <div style={{ width: '100%' }}>
+        <section className="max-w-7xl mx-auto bg-white/60 backdrop-blur-sm p-4 md:p-8 rounded-2xl shadow-xl mb-12 md:mb-16 overflow-hidden">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 md:gap-4 mb-4 md:mb-6">
+            <div>
               <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900">Services Offered</h2>
               <p className="text-gray-600 mt-1 text-sm md:text-base">To our esteemed customers</p>
             </div>
             {/* Quick search */}
-            <div className="w-full md:w-96 mt-3 md:mt-0" style={{ width: '100%' }}>
+            <div className="w-full md:w-96 mt-3 md:mt-0">
               <label htmlFor="service-search" className="sr-only">
                 Search services
               </label>
-              <div className="relative" style={{ width: '100%' }}>
+              <div className="relative">
                 <input
                   id="service-search"
                   type="text"
@@ -347,25 +340,23 @@ function Home() {
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search e.g. 'electrical', 'weddings', 'cctv'…"
                   className="w-full px-4 py-2 md:py-3 rounded-xl border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-gray-800 text-sm md:text-base"
-                  style={{ width: '100%', boxSizing: 'border-box' }}
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm md:text-base">⌘K</span>
               </div>
             </div>
           </div>
           {/* Service cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-5" style={{ width: '100%' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-5">
             {filteredServices.map((label, idx) => (
               <article
                 key={`${label}-${idx}`}
-                className="group relative rounded-xl border border-gray-100 bg-white shadow hover:shadow-lg transition-shadow"
-                style={{ width: '100%', overflow: 'hidden' }}
+                className="group relative overflow-hidden rounded-xl border border-gray-100 bg-white shadow hover:shadow-lg transition-shadow"
               >
-                <div className="p-4 md:p-5 flex items-start gap-3 md:gap-4" style={{ width: '100%' }}>
+                <div className="p-4 md:p-5 flex items-start gap-3 md:gap-4">
                   <div className="flex h-9 w-9 md:h-11 md:w-11 items-center justify-center rounded-lg bg-gray-50 ring-1 ring-gray-200 group-hover:bg-gray-100 transition-colors">
                     <span className="text-lg md:text-xl">{iconFor(label)}</span>
                   </div>
-                  <h3 className="font-semibold text-gray-800 text-sm md:text-base leading-snug" style={{ width: 'calc(100% - 60px)' }}>{label}</h3>
+                  <h3 className="font-semibold text-gray-800 text-sm md:text-base leading-snug">{label}</h3>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-blue-500 via-emerald-500 to-fuchsia-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </article>
@@ -373,12 +364,12 @@ function Home() {
           </div>
           {/* No services match */}
           {filteredServices.length === 0 && (
-            <div className="text-center py-8 md:py-12" style={{ width: '100%' }}>
+            <div className="text-center py-8 md:py-12">
               <p className="text-gray-500 text-sm md:text-base">No services match "{query}". Try a different keyword.</p>
             </div>
           )}
           {/* Helper chips */}
-          <div className="mt-4 md:mt-6 flex flex-wrap gap-2" style={{ width: '100%' }}>
+          <div className="mt-4 md:mt-6 flex flex-wrap gap-2">
             {['Weddings', 'Electrical', 'Lighting', 'CCTV', 'Wallpaper', 'Events', 'Design'].map((hint) => (
               <button
                 key={hint}
@@ -400,7 +391,7 @@ function Home() {
         </section>
 
         {/* Our Business & Future */}
-        <section className="max-w-7xl mx-auto bg-white p-4 md:p-8 rounded-lg shadow-lg mb-12 md:mb-16" style={{ width: '100%', boxSizing: 'border-box' }}>
+        <section className="max-w-7xl mx-auto bg-white p-4 md:p-8 rounded-lg shadow-lg mb-12 md:mb-16 overflow-hidden">
           <h2
             className="text-2xl md:text-4xl font-extrabold text-gray-800 mb-6 md:mb-8 text-center animate-blink"
             style={{
@@ -410,44 +401,44 @@ function Home() {
             Our Craft is Our Business, And We Are Fixing The Future
           </h2>
           {/* Images grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6" style={{ width: '100%' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {[Working1, Working2, Working3, Working4, Working5, Working6, Working7, Working8, Working9, Working10, Working11, Working12].map((image, index) => (
-              <div key={index} className="group relative rounded-xl shadow-lg hover:scale-105 transition-all duration-300" style={{ width: '100%', overflow: 'hidden' }}>
-                <img src={image} alt={`Working ${index + 1}`} className="w-full h-40 md:h-64 object-cover" style={{ width: '100%' }} />
+              <div key={index} className="group relative overflow-hidden rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
+                <img src={image} alt={`Working ${index + 1}`} className="w-full h-40 md:h-64 object-cover" />
               </div>
             ))}
           </div>
         </section>
 
         {/* Development Keys */}
-        <section className="max-w-7xl mx-auto bg-white p-4 md:p-8 rounded-lg shadow-lg mb-12 md:mb-16" style={{ width: '100%', boxSizing: 'border-box' }}>
+        <section className="max-w-7xl mx-auto bg-white p-4 md:p-8 rounded-lg shadow-lg mb-12 md:mb-16 overflow-hidden">
           <h2 className="text-2xl md:text-4xl font-extrabold text-gray-800 mb-6 md:mb-8 text-center">
             Our Keys for Development
           </h2>
           {/* Keys in cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6" style={{ width: '100%' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {/* Example cards */}
-            <div className="bg-blue-500 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" style={{ width: '100%' }}>
+            <div className="bg-blue-500 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
               <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 md:mb-4">Desire for Excellence</h3>
               <p className="text-white text-sm md:text-base">
                 We constantly strive for excellence in everything we do, ensuring high-quality work and
                 unparalleled service.
               </p>
             </div>
-            <div className="bg-blue-500 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" style={{ width: '100%' }}>
+            <div className="bg-blue-500 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
               <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 md:mb-4">Trust and Confidence Build-Up</h3>
               <p className="text-white text-sm md:text-base">
                 Building strong, trusting relationships with clients and partners is at the heart of our
                 business.
               </p>
             </div>
-            <div className="bg-blue-500 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" style={{ width: '100%' }}>
+            <div className="bg-blue-500 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
               <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 md:mb-4">Transparency</h3>
               <p className="text-white text-sm md:text-base">
                 We maintain transparency in all our dealings, ensuring openness, honesty, and clear communication.
               </p>
             </div>
-            <div className="bg-blue-500 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" style={{ width: '100%' }}>
+            <div className="bg-blue-500 p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
               <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 md:mb-4">Teamwork</h3>
               <p className="text-white text-sm md:text-base">
                 Our team collaborates effectively to achieve shared goals, recognizing the importance of collective effort.
@@ -455,7 +446,7 @@ function Home() {
             </div>
           </div>
           {/* MOTTO with blinking */}
-          <div className="text-center mt-6 md:mt-8" style={{ width: '100%' }}>
+          <div className="text-center mt-6 md:mt-8 overflow-hidden">
             <h3 className="text-lg md:text-2xl font-semibold text-gray-800 mb-3 md:mb-4 animate-blink" style={{ animation: 'colorChange 10s ease-in-out infinite' }}>
               MOTTO: A COMPANY IS MEASURED WITH THE COURTESY IT TREATS ITS CLIENTS.
             </h3>
@@ -503,45 +494,22 @@ function Home() {
         }
       `}</style>
 
-      {/* Global styles to completely prevent horizontal scrolling */}
+      {/* Global styles to prevent horizontal scrolling */}
       <style jsx global>{`
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-
-        html {
+        html, body {
           overflow-x: hidden;
-          width: 100%;
           max-width: 100%;
           position: relative;
         }
-
+        
         body {
-          overflow-x: hidden !important;
-          width: 100% !important;
-          max-width: 100% !important;
-          position: relative !important;
-          margin: 0 !important;
-          padding: 0 !important;
+          margin: 0;
+          padding: 0;
+          width: 100%;
         }
-
-        #root, .App, .main-container {
-          overflow-x: hidden !important;
-          width: 100% !important;
-          max-width: 100% !important;
-        }
-
-        /* Force all containers to stay within bounds */
-        div, section, article, main, header, footer {
-          max-width: 100% !important;
-        }
-
-        /* Prevent any element from causing horizontal scroll */
-        img, video, iframe, canvas, svg {
-          max-width: 100% !important;
-          height: auto !important;
+        
+        * {
+          box-sizing: border-box;
         }
       `}</style>
     </div>
